@@ -1,0 +1,681 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$/tmp/xcXLAKbgN.o
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 E E 3 2
+config CONFIG 4 2007 2007 1 2
+$dist/default/production/auto2_picgenios.X.production.o
+cinit CODE 0 11 11 15 2
+text1 CODE 0 4F8 4F8 2E 2
+text2 CODE 0 26 26 18F 2
+text3 CODE 0 599 599 12 2
+text4 CODE 0 526 526 27 2
+text5 CODE 0 436 436 46 2
+text6 CODE 0 47C 47C 45 2
+text7 CODE 0 54D 54D 26 2
+text8 CODE 0 33B 33B 56 2
+text9 CODE 0 573 573 26 2
+text10 CODE 0 5B3 5B3 6 2
+text11 CODE 0 3E7 3E7 4F 2
+text12 CODE 0 391 391 56 2
+idataCOMMON CODE 0 5B9 5B9 1 2
+maintext CODE 0 1B5 1B5 186 2
+cstackCOMMON COMMON 1 70 70 7 1
+cstackBANK0 BANK0 1 20 20 2F 1
+intentry CODE 0 4 4 A 2
+bssBANK0 BANK0 1 4F 4F 15 1
+strings STRING 0 4C1 4C1 37 2
+dataCOMMON COMMON 1 79 79 1 1
+clrtext CODE 0 5AB 5AB 8 2
+bssCOMMON COMMON 1 77 77 2 1
+config CONFIG 4 2007 2007 1 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 64-6F 1
+RAM A0-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 64-6F 1
+BANK1 A0-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 3-3 2
+CONST 5BA-1FFF 2
+ENTRY 3-3 2
+ENTRY 5BA-1FFF 2
+IDLOC 2000-2003 2
+STACK 110-16F 1
+CODE 3-3 2
+CODE 5BA-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+COMMON 7A-7D 1
+EEDATA 2100-21FF 2
+STRCODE 3-3 2
+STRCODE 5BA-1FFF 2
+STRING 3-3 2
+STRING 5BA-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production/auto2_picgenios.X.production.o
+11 cinit CODE >544:/tmp/xcXNBjeEe.s
+11 cinit CODE >547:/tmp/xcXNBjeEe.s
+11 cinit CODE >576:/tmp/xcXNBjeEe.s
+16 cinit CODE >577:/tmp/xcXNBjeEe.s
+17 cinit CODE >596:/tmp/xcXNBjeEe.s
+18 cinit CODE >597:/tmp/xcXNBjeEe.s
+19 cinit CODE >598:/tmp/xcXNBjeEe.s
+1A cinit CODE >599:/tmp/xcXNBjeEe.s
+1B cinit CODE >600:/tmp/xcXNBjeEe.s
+20 cinit CODE >603:/tmp/xcXNBjeEe.s
+21 cinit CODE >604:/tmp/xcXNBjeEe.s
+22 cinit CODE >610:/tmp/xcXNBjeEe.s
+22 cinit CODE >612:/tmp/xcXNBjeEe.s
+23 cinit CODE >613:/tmp/xcXNBjeEe.s
+4 intentry CODE >25:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+391 text12 CODE >25:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+391 text12 CODE >27:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+39D text12 CODE >29:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+39E text12 CODE >30:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3A2 text12 CODE >32:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3A7 text12 CODE >33:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3A9 text12 CODE >34:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3AA text12 CODE >35:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3AE text12 CODE >39:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3B9 text12 CODE >40:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3C3 text12 CODE >41:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3C4 text12 CODE >42:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3C9 text12 CODE >43:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3CC text12 CODE >44:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3CC text12 CODE >45:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3CE text12 CODE >45:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3D2 text12 CODE >47:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3DA text12 CODE >48:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3DE text12 CODE >53:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3E7 text11 CODE >203:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3EA text11 CODE >204:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3EE text11 CODE >207:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3F0 text11 CODE >209:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3FB text11 CODE >210:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+3FC text11 CODE >212:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+400 text11 CODE >213:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+404 text11 CODE >213:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+40C text11 CODE >215:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+410 text11 CODE >215:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+417 text11 CODE >216:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+41D text11 CODE >218:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+423 text11 CODE >218:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+427 text11 CODE >220:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+42D text11 CODE >220:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+431 text11 CODE >222:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+435 text11 CODE >224:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+5B3 text10 CODE >24:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+5B4 text10 CODE >25:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+5B8 text10 CODE >26:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+573 text9 CODE >28:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+576 text9 CODE >29:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+577 text9 CODE >30:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+57D text9 CODE >31:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+580 text9 CODE >32:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+589 text9 CODE >33:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+58C text9 CODE >34:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+595 text9 CODE >35:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+598 text9 CODE >36:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+33B text8 CODE >48:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+33B text8 CODE >49:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+33E text8 CODE >50:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+33F text8 CODE >51:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+349 text8 CODE >52:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+34C text8 CODE >54:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+352 text8 CODE >55:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+35C text8 CODE >56:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+362 text8 CODE >57:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+36C text8 CODE >58:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+372 text8 CODE >59:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+378 text8 CODE >60:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+37E text8 CODE >61:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+384 text8 CODE >62:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+38A text8 CODE >63:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+390 text8 CODE >64:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+54D text7 CODE >38:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+550 text7 CODE >39:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+551 text7 CODE >40:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+557 text7 CODE >41:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+55A text7 CODE >42:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+563 text7 CODE >43:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+566 text7 CODE >44:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+56F text7 CODE >45:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+572 text7 CODE >46:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+47C text6 CODE >66:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+47C text6 CODE >67:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+47F text6 CODE >69:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+480 text6 CODE >70:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+484 text6 CODE >70:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+48D text6 CODE >70:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+491 text6 CODE >71:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+497 text6 CODE >72:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+498 text6 CODE >73:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+49C text6 CODE >73:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+4A9 text6 CODE >76:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+4AF text6 CODE >69:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+4B3 text6 CODE >69:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+4BC text6 CODE >69:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+4C0 text6 CODE >78:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/lcd.c
+436 text5 CODE >5:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+436 text5 CODE >13:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+43A text5 CODE >14:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+440 text5 CODE >15:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+442 text5 CODE >16:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+443 text5 CODE >17:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+444 text5 CODE >17:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+448 text5 CODE >17:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+44A text5 CODE >18:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+44E text5 CODE >16:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+452 text5 CODE >21:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+453 text5 CODE >21:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+457 text5 CODE >21:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+459 text5 CODE >22:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+45B text5 CODE >22:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+45F text5 CODE >22:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+463 text5 CODE >23:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+466 text5 CODE >23:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+469 text5 CODE >24:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+46A text5 CODE >26:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+46B text5 CODE >26:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+46F text5 CODE >26:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+471 text5 CODE >27:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+477 text5 CODE >29:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+47B text5 CODE >30:/opt/microchip/xc8/v2.32/pic/sources/c90/common/lwdiv.c
+526 text4 CODE >15:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+526 text4 CODE >43:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+528 text4 CODE >45:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+52E text4 CODE >46:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+530 text4 CODE >46:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+534 text4 CODE >47:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+535 text4 CODE >47:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+539 text4 CODE >47:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+53B text4 CODE >48:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+53C text4 CODE >48:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+540 text4 CODE >48:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+542 text4 CODE >49:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+548 text4 CODE >52:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+54C text4 CODE >53:/opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul16.c
+599 text3 CODE >8:/opt/microchip/xc8/v2.32/pic/sources/c90/common/isdigit.c
+59A text3 CODE >14:/opt/microchip/xc8/v2.32/pic/sources/c90/common/isdigit.c
+59D text3 CODE >14:/opt/microchip/xc8/v2.32/pic/sources/c90/common/isdigit.c
+5A3 text3 CODE >14:/opt/microchip/xc8/v2.32/pic/sources/c90/common/isdigit.c
+5AA text3 CODE >15:/opt/microchip/xc8/v2.32/pic/sources/c90/common/isdigit.c
+26 text2 CODE >505:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+29 text2 CODE >550:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+2D text2 CODE >553:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+2E text2 CODE >555:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+34 text2 CODE >558:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+3F text2 CODE >559:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+40 text2 CODE >563:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+42 text2 CODE >565:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+44 text2 CODE >596:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+44 text2 CODE >597:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+45 text2 CODE >598:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+49 text2 CODE >601:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+54 text2 CODE >601:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+59 text2 CODE >601:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+5C text2 CODE >614:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+6C text2 CODE >615:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+70 text2 CODE >617:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+85 text2 CODE >618:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+8F text2 CODE >618:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+94 text2 CODE >618:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+9C text2 CODE >619:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+AC text2 CODE >848:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+BD text2 CODE >848:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+C2 text2 CODE >848:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+C5 text2 CODE >848:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+C8 text2 CODE >848:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+CB text2 CODE >1312:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+D7 text2 CODE >1342:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+D9 text2 CODE >1343:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+EC text2 CODE >1343:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+F0 text2 CODE >1343:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+F5 text2 CODE >1344:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+FF text2 CODE >1407:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+102 text2 CODE >1407:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+106 text2 CODE >1407:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+10A text2 CODE >1408:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+112 text2 CODE >1408:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+116 text2 CODE >1410:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+11A text2 CODE >1413:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+11E text2 CODE >1441:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+124 text2 CODE >1443:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+131 text2 CODE >1443:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+13C text2 CODE >1450:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+142 text2 CODE >1456:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+14F text2 CODE >1456:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+159 text2 CODE >1498:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+15D text2 CODE >1500:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+15E text2 CODE >1526:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+17F text2 CODE >1530:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+18A text2 CODE >1550:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+195 text2 CODE >1500:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+19E text2 CODE >553:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+1B0 text2 CODE >1564:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+1B4 text2 CODE >1567:/opt/microchip/xc8/v2.32/pic/sources/c90/common/doprnt.c
+4F8 text1 CODE >179:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+4FB text1 CODE >183:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+501 text1 CODE >185:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+505 text1 CODE >187:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+50B text1 CODE >188:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+515 text1 CODE >191:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+51B text1 CODE >191:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+51F text1 CODE >193:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+525 text1 CODE >195:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1B5 maintext CODE >55:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1B5 maintext CODE >59:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1B6 maintext CODE >60:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1B9 maintext CODE >61:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1BA maintext CODE >62:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1BB maintext CODE >63:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1BC maintext CODE >67:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1C2 maintext CODE >68:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1C5 maintext CODE >69:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1C8 maintext CODE >71:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1CB maintext CODE >72:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1CD maintext CODE >73:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1CE maintext CODE >74:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1D1 maintext CODE >75:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1D2 maintext CODE >76:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1D3 maintext CODE >77:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1D6 maintext CODE >78:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1D7 maintext CODE >79:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1D8 maintext CODE >80:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1D9 maintext CODE >82:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1DD maintext CODE >83:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1DE maintext CODE >86:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1E2 maintext CODE >87:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1E4 maintext CODE >89:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1EA maintext CODE >90:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1EE maintext CODE >92:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1EF maintext CODE >94:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1F0 maintext CODE >95:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1F1 maintext CODE >96:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+1F6 maintext CODE >97:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+204 maintext CODE >98:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+20F maintext CODE >106:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+213 maintext CODE >106:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+217 maintext CODE >109:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+220 maintext CODE >110:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+223 maintext CODE >111:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+238 maintext CODE >112:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+243 maintext CODE >113:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+24B maintext CODE >113:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+24F maintext CODE >114:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+250 maintext CODE >115:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+256 maintext CODE >118:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+25D maintext CODE >119:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+25E maintext CODE >119:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+262 maintext CODE >119:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+264 maintext CODE >120:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+269 maintext CODE >120:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+26D maintext CODE >121:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+27D maintext CODE >124:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+27F maintext CODE >124:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+283 maintext CODE >124:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+287 maintext CODE >126:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+292 maintext CODE >128:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+29C maintext CODE >129:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+29D maintext CODE >132:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2A7 maintext CODE >133:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2A8 maintext CODE >135:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2B2 maintext CODE >136:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2BE maintext CODE >137:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2CA maintext CODE >139:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2D4 maintext CODE >140:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2D5 maintext CODE >143:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2DF maintext CODE >144:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2E0 maintext CODE >146:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2EA maintext CODE >147:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2F6 maintext CODE >148:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2F7 maintext CODE >150:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2F8 maintext CODE >151:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+2FC maintext CODE >152:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+30C maintext CODE >153:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+310 maintext CODE >154:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+314 maintext CODE >155:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+31E maintext CODE >156:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+32B maintext CODE >163:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+330 maintext CODE >163:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+335 maintext CODE >163:/media/julio/dados/juliocesar/ifsul/engenharia/automacao2/programacao/autom2_picgenios/auto2_picgenios.X/automacao_2_2023_1_picgenios.c
+5AB clrtext CODE >583:/tmp/xcXNBjeEe.s
+5AB clrtext CODE >584:/tmp/xcXNBjeEe.s
+5AC clrtext CODE >585:/tmp/xcXNBjeEe.s
+5AC clrtext CODE >586:/tmp/xcXNBjeEe.s
+5AD clrtext CODE >587:/tmp/xcXNBjeEe.s
+5AE clrtext CODE >588:/tmp/xcXNBjeEe.s
+5AF clrtext CODE >589:/tmp/xcXNBjeEe.s
+5B0 clrtext CODE >590:/tmp/xcXNBjeEe.s
+5B1 clrtext CODE >591:/tmp/xcXNBjeEe.s
+5B2 clrtext CODE >592:/tmp/xcXNBjeEe.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 2 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__Hspace_0 5BA 0 ABS 0 - -
+__Hspace_1 7A 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 400F 0 ABS 0 - -
+__size_of_lcd_cmd 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__size_of_lcd_dat 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__size_of_lcd_str 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__Hstrings 0 0 ABS 0 strings -
+_ADON F8 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_BRGH 4C2 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_CREN C4 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_FERR C2 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_OERR C1 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_PEIE 5E 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_RCIE 465 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_RCIF 65 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_SPEN C7 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_SYNC 4C4 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_TMR1 E 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_TRMT 4C1 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_TXEN 4C5 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_TXIE 464 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXLAKbgN.o
+_gc_c 4F 0 BANK0 1 bssBANK0 dist/default/production/auto2_picgenios.X.production.o
+_main 36A 0 CODE 0 maintext dist/default/production/auto2_picgenios.X.production.o
+btemp 7E 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+start 1C 0 CODE 0 init /tmp/xcXLAKbgN.o
+__size_of_main 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__size_of___lwdiv 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+?___wmul 20 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__Hpowerup 0 0 CODE 0 powerup -
+__HdataCOMMON 0 0 ABS 0 dataCOMMON -
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXLAKbgN.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXLAKbgN.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXLAKbgN.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXLAKbgN.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXLAKbgN.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXLAKbgN.o
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+wtemp0 7E 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+main@c_texto 3A 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext -
+__pidataCOMMON B72 0 CODE 0 idataCOMMON dist/default/production/auto2_picgenios.X.production.o
+___wmul@multiplicand 22 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+f_crc@c_max 22 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+_ADCON1 9F 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_ADRESH 1E 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_ADRESL 9E 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+f_crc@i_CRC 25 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__end_of_lcd_cmd B32 0 CODE 0 text9 dist/default/production/auto2_picgenios.X.production.o
+__end_of_lcd_dat AE6 0 CODE 0 text7 dist/default/production/auto2_picgenios.X.production.o
+__end_of_lcd_str 982 0 CODE 0 text6 dist/default/production/auto2_picgenios.X.production.o
+__LdataCOMMON 0 0 ABS 0 dataCOMMON -
+__end_of___wmul A9A 0 CODE 0 text4 dist/default/production/auto2_picgenios.X.production.o
+main@c_i 4E 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+__size_of_sprintf 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__end_of___lwdiv 8F8 0 CODE 0 text5 dist/default/production/auto2_picgenios.X.production.o
+__size_of_isdigit 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+___stackhi 0 0 ABS 0 - /tmp/xcXLAKbgN.o
+___stacklo 0 0 ABS 0 - /tmp/xcXLAKbgN.o
+___lwdiv@quotient 25 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__LidataCOMMON 0 0 ABS 0 idataCOMMON -
+__size_of_f_crc 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+start_initialization 22 0 CODE 0 cinit dist/default/production/auto2_picgenios.X.production.o
+__end_of_hexpowers 9B2 0 STRING 0 strings dist/default/production/auto2_picgenios.X.production.o
+__end_of_lcd_wr B72 0 CODE 0 text10 dist/default/production/auto2_picgenios.X.production.o
+clear_ram0 B56 0 CODE 0 clrtext dist/default/production/auto2_picgenios.X.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+sub_tx@c_i 21 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+_TMR1IE 460 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_TMR1IF 60 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_TMR1ON 80 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_hexpowers 9A2 0 STRING 0 strings dist/default/production/auto2_picgenios.X.production.o
+_isdigit$730 74 0 COMMON 1 cstackCOMMON dist/default/production/auto2_picgenios.X.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXLAKbgN.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hcinit 4C 0 CODE 0 cinit -
+__end_of_sub_tx A4C 0 CODE 0 text1 dist/default/production/auto2_picgenios.X.production.o
+__Hstack 0 0 STACK 2 stack -
+__stringbase 9A0 0 STRING 0 strings dist/default/production/auto2_picgenios.X.production.o
+___lwdiv@counter 24 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__Hmaintext 0 0 ABS 0 maintext -
+lcd_str@i 24 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__end_of_sprintf 36A 0 CODE 0 text2 dist/default/production/auto2_picgenios.X.production.o
+__size_of_lcd_init 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 4 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__end_of_isdigit B56 0 CODE 0 text3 dist/default/production/auto2_picgenios.X.production.o
+__Lcinit 22 0 CODE 0 cinit -
+__Lstack 0 0 STACK 2 stack -
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 1C 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 1C 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+___wmul A4C 0 CODE 0 text4 dist/default/production/auto2_picgenios.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_GIE 5F 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_RC0 38 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_RC1 39 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_RC2 3A 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_RE1 49 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_RE2 4A 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_RX9 C6 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__S0 5BA 0 ABS 0 - -
+__S1 7A 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_isr 722 0 CODE 0 text12 dist/default/production/auto2_picgenios.X.production.o
+saved_w 7E 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__HidataCOMMON 0 0 ABS 0 idataCOMMON -
+sprintf@idx 2D 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+sprintf@val 30 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__end_of_isr 7CE 0 CODE 0 text12 dist/default/production/auto2_picgenios.X.production.o
+_lcd_init 676 0 CODE 0 text8 dist/default/production/auto2_picgenios.X.production.o
+__Lintentry 8 0 CODE 0 intentry -
+__stringtab 982 0 STRING 0 strings dist/default/production/auto2_picgenios.X.production.o
+_lcd_cmd AE6 0 CODE 0 text9 dist/default/production/auto2_picgenios.X.production.o
+_lcd_dat A9A 0 CODE 0 text7 dist/default/production/auto2_picgenios.X.production.o
+_lcd_str 8F8 0 CODE 0 text6 dist/default/production/auto2_picgenios.X.production.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXLAKbgN.o
+__size_of___wmul 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__end_of_lcd_init 722 0 CODE 0 text8 dist/default/production/auto2_picgenios.X.production.o
+lcd_str@str 21 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+_lcd_wr B66 0 CODE 0 text10 dist/default/production/auto2_picgenios.X.production.o
+sprintf@flag 2F 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+sprintf@prec 32 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__ptext10 B66 0 CODE 0 text10 dist/default/production/auto2_picgenios.X.production.o
+__ptext11 7CE 0 CODE 0 text11 dist/default/production/auto2_picgenios.X.production.o
+__ptext12 722 0 CODE 0 text12 dist/default/production/auto2_picgenios.X.production.o
+___lwdiv 86C 0 CODE 0 text5 dist/default/production/auto2_picgenios.X.production.o
+__pmaintext 36A 0 CODE 0 maintext dist/default/production/auto2_picgenios.X.production.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 0 0 CONFIG 4 config -
+___wmul@multiplier 20 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+___lwdiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+main@i_crc 4A 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+_sub_tx 9F0 0 CODE 0 text1 dist/default/production/auto2_picgenios.X.production.o
+_ADCON0bits 1F 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__end_of__stringtab 9A2 0 STRING 0 strings dist/default/production/auto2_picgenios.X.production.o
+__size_of_lcd_wr 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_gi_pisca 79 0 COMMON 1 dataCOMMON dist/default/production/auto2_picgenios.X.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__pbssCOMMON 77 0 COMMON 1 bssCOMMON dist/default/production/auto2_picgenios.X.production.o
+lcd_cmd@val 20 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 1C 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization 44 0 CODE 0 cinit dist/default/production/auto2_picgenios.X.production.o
+__Hintentry 1C 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+___lwdiv@dividend 22 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+?___lwdiv 20 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__Hreset_vec 6 0 CODE 0 reset_vec -
+main@i_crc2 4C 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__size_of_sub_tx 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__ptext1 9F0 0 CODE 0 text1 dist/default/production/auto2_picgenios.X.production.o
+__ptext2 4C 0 CODE 0 text2 dist/default/production/auto2_picgenios.X.production.o
+__ptext3 B32 0 CODE 0 text3 dist/default/production/auto2_picgenios.X.production.o
+__ptext4 A4C 0 CODE 0 text4 dist/default/production/auto2_picgenios.X.production.o
+__ptext5 86C 0 CODE 0 text5 dist/default/production/auto2_picgenios.X.production.o
+__ptext6 8F8 0 CODE 0 text6 dist/default/production/auto2_picgenios.X.production.o
+__ptext7 A9A 0 CODE 0 text7 dist/default/production/auto2_picgenios.X.production.o
+__ptext8 676 0 CODE 0 text8 dist/default/production/auto2_picgenios.X.production.o
+__ptext9 AE6 0 CODE 0 text9 dist/default/production/auto2_picgenios.X.production.o
+_sprintf 4C 0 CODE 0 text2 dist/default/production/auto2_picgenios.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+sprintf@ap 2E 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+sprintf@sp 33 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+_isdigit B32 0 CODE 0 text3 dist/default/production/auto2_picgenios.X.production.o
+sub_tx@c_max 20 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__end_of__initialization 44 0 CODE 0 cinit dist/default/production/auto2_picgenios.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+?_f_crc 74 0 COMMON 1 cstackCOMMON dist/default/production/auto2_picgenios.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext -
+f_crc@c_i 23 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+f_crc@c_j 24 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+sub_tx@c_buffer 74 0 COMMON 1 cstackCOMMON dist/default/production/auto2_picgenios.X.production.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/auto2_picgenios.X.production.o
+_TXSTAbits 98 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__Hend_init 22 0 CODE 0 end_init -
+sprintf@c 36 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+sprintf@f 27 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+lcd_dat@val 20 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__end_of_main 676 0 CODE 0 maintext dist/default/production/auto2_picgenios.X.production.o
+isdigit@c 75 0 COMMON 1 cstackCOMMON dist/default/production/auto2_picgenios.X.production.o
+__end_of_f_crc 86C 0 CODE 0 text11 dist/default/production/auto2_picgenios.X.production.o
+?_sprintf 27 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+_PORTD 8 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_RCREG 1A 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_SPBRG 99 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_TRISA 85 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_TRISB 86 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_TRISC 87 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_TRISD 88 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_TRISE 89 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+_TXREG 19 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+interrupt_function 8 0 CODE 0 intentry dist/default/production/auto2_picgenios.X.production.o
+_f_crc 7CE 0 CODE 0 text11 dist/default/production/auto2_picgenios.X.production.o
+_gc_rx 50 0 BANK0 1 bssBANK0 dist/default/production/auto2_picgenios.X.production.o
+lcd_wr@val 74 0 COMMON 1 cstackCOMMON dist/default/production/auto2_picgenios.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production/auto2_picgenios.X.production.o
+sprintf@width 34 0 BANK0 1 cstackBANK0 dist/default/production/auto2_picgenios.X.production.o
+__size_of_isr 0 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+__initialization 22 0 CODE 0 cinit dist/default/production/auto2_picgenios.X.production.o
+__pbssBANK0 4F 0 BANK0 1 bssBANK0 dist/default/production/auto2_picgenios.X.production.o
+__pdataCOMMON 79 0 COMMON 1 dataCOMMON dist/default/production/auto2_picgenios.X.production.o
+__pstrings 982 0 STRING 0 strings dist/default/production/auto2_picgenios.X.production.o
+f_crc@c_buffer 74 0 COMMON 1 cstackCOMMON dist/default/production/auto2_picgenios.X.production.o
+___wmul@product 74 0 COMMON 1 cstackCOMMON dist/default/production/auto2_picgenios.X.production.o
+_CCP1CONbits 17 0 ABS 0 - dist/default/production/auto2_picgenios.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text1 0 4F8 9F0 C2 2
+cstackCOMMON 1 70 70 A 1
+cstackBANK0 1 20 20 44 1
+intentry 0 4 8 4BD 2
+reset_vec 0 0 0 3 2
+strings 0 4C1 982 37 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
