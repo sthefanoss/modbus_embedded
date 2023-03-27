@@ -16,9 +16,8 @@
 #pragma config WRT = OFF        // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
 #pragma config CP = OFF         // Flash Program Memory Code Protection bit (Code protection off)
 
-
-#define _XTAL_FREQ 8000000L
 #define BAUD 9600L
+#define _XTAL_FREQ 8000000L
 
 #define SPBRG_INIT (_XTAL_FREQ/(16UL*BAUD) - 1)//configuração da taxa serial, p/ baixa frequência
 #define uchar unsigned char

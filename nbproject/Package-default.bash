@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/modbus_sthefano.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=modbus_sthefano.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=modbussthefano/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/modbus_embedded.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=modbus_embedded.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=modbusembedded/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/modbussthefano/bin
+makeDirectory ${TMPDIR}/modbusembedded/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/modbussthefano.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/modbusembedded.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/modbussthefano.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/modbusembedded.tar *
 checkReturnCode
 
 # Cleanup

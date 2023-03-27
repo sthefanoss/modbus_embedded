@@ -1,61 +1,24 @@
-
-// #pragma config statements should precede project file includes.
-// Use project enums instead of #define for ON and OFF.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "declaracoes.h"
 #include <xc.h>
 #include <pic16f877a.h>
 #include <stdint.h>
-#include "lcd.c"
-
-
-
-
+#include "lcd.h"
+#include "declaracoes.h"
 
 void sub_tx(uchar, uchar *);
 uint f_crc(uchar, uchar *);
 int le_ad(void);
+void __interrupt() isr(void);
 
 uchar gc_rx[20], gc_c = 0;
 uint16_t gi_adconv = 0;
 uint8_t gi_pisca = 100;
-
-void __interrupt() isr(void) {
-
-    if (TMR1IE && TMR1IF)//timer 1?
-    {
-        TMR1IF = 0;
-        TMR1 = 55536;
-
-        if (gi_pisca) {
-            gi_pisca--;
-        } else {
-            gi_pisca = 100; //a cada 1s
-        }
-
-    }
-    if (RCIF && RCIE) {
-        if (OERR || FERR) {
-            CREN = 0;
-            __delay_us(10);
-            CREN = 1;
-        }
-        if (gc_c<sizeof (gc_rx))//se houver espaço coloca no buffer
-        {
-            gc_rx[gc_c] = RCREG;
-            gc_c++;
-
-        }
-
-    }
-}
+uchar c_texto[16], c_i;
+unsigned int i_crc, i_crc2;
 
 void main(void) {
-    uchar c_texto[16], c_i;
-    unsigned int i_crc, i_crc2;
-
     GIE = 0;
     TRISC = 0;
     TRISB = 0;
@@ -168,6 +131,36 @@ void main(void) {
         //        RB1 ^= 1;
     }
     return;
+}
+
+void __interrupt() isr(void) {
+
+    if (TMR1IE && TMR1IF)//timer 1?
+    {
+        TMR1IF = 0;
+        TMR1 = 55536;
+
+        if (gi_pisca) {
+            gi_pisca--;
+        } else {
+            gi_pisca = 100; //a cada 1s
+        }
+
+    }
+    if (RCIF && RCIE) {
+        if (OERR || FERR) {
+            CREN = 0;
+            __delay_us(10);
+            CREN = 1;
+        }
+        if (gc_c<sizeof (gc_rx))//se houver espaço coloca no buffer
+        {
+            gc_rx[gc_c] = RCREG;
+            gc_c++;
+
+        }
+
+    }
 }
 
 /*----------------------------------------

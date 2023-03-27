@@ -6,8 +6,8 @@
 CND_BASEDIR=`pwd`
 # default configuration
 CND_ARTIFACT_DIR_default=dist/default/production
-CND_ARTIFACT_NAME_default=modbus_sthefano.production.hex
-CND_ARTIFACT_PATH_default=dist/default/production/modbus_sthefano.production.hex
+CND_ARTIFACT_NAME_default=modbus_embedded.production.hex
+CND_ARTIFACT_PATH_default=dist/default/production/modbus_embedded.production.hex
 CND_PACKAGE_DIR_default=${CND_DISTDIR}/default/package
-CND_PACKAGE_NAME_default=modbussthefano.tar
-CND_PACKAGE_PATH_default=${CND_DISTDIR}/default/package/modbussthefano.tar
+CND_PACKAGE_NAME_default=modbusembedded.tar
+CND_PACKAGE_PATH_default=${CND_DISTDIR}/default/package/modbusembedded.tar

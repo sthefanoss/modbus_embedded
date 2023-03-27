@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=modbus_sthefano
+PROJECTNAME=modbus_embedded
 
 # Active Configuration
 DEFAULTCONF=default
