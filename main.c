@@ -5,7 +5,7 @@
 #include <pic16f877a.h>
 #include <stdint.h>
 #include "declarations.h"
-#include "handlers.h"
+#include "request_handler.h"
 #include "lcd.h"
 #include "serial_port.h"
 #include "serialization.h"
@@ -81,39 +81,8 @@ void main(void) {
             continue;
         }
 
-        // Copia os dados da requisicao para a resposta por praticidade.
-        updateResponse(&request, &response);
-
-        // Trata cada uma das requisicoes pedidas no trabalho separadamente
-        switch (request.function) {
-            case 1:
-                handleRequest1(&request, &response);
-                break;
-
-            case 3:
-                handleRequest3(&request, &response);
-                break;
-
-            case 5:
-                handleRequest5(&request, &response);
-                break;
-
-            case 6:
-                handleRequest6(&request, &response);
-                break;
-
-            case 15:
-                handleRequest15(&request, &response);
-                break;
-
-            case 16:
-                handleRequest16(&request, &response);
-                break;
-
-            default:
-                handleInvalidFunctionCode(&request, &response);
-                break;
-        }
+        // Trata cada uma das requisicoes.
+        handleRequest(&request, &response);
 
         // Passa a estrutura da resposta para o buffer.
         serializeResponse(&buffer, &response);

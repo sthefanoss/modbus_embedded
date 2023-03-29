@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=lcd.c main.c serial_port.c handlers.c serialization.c
+SOURCEFILES_QUOTED_IF_SPACED=lcd.c main.c serial_port.c serialization.c request_handler.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/serial_port.p1 ${OBJECTDIR}/handlers.p1 ${OBJECTDIR}/serialization.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/serial_port.p1.d ${OBJECTDIR}/handlers.p1.d ${OBJECTDIR}/serialization.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/serial_port.p1 ${OBJECTDIR}/serialization.p1 ${OBJECTDIR}/request_handler.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/serial_port.p1.d ${OBJECTDIR}/serialization.p1.d ${OBJECTDIR}/request_handler.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/serial_port.p1 ${OBJECTDIR}/handlers.p1 ${OBJECTDIR}/serialization.p1
+OBJECTFILES=${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/serial_port.p1 ${OBJECTDIR}/serialization.p1 ${OBJECTDIR}/request_handler.p1
 
 # Source Files
-SOURCEFILES=lcd.c main.c serial_port.c handlers.c serialization.c
+SOURCEFILES=lcd.c main.c serial_port.c serialization.c request_handler.c
 
 
 
@@ -118,14 +118,6 @@ ${OBJECTDIR}/serial_port.p1: serial_port.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/serial_port.d ${OBJECTDIR}/serial_port.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/serial_port.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/handlers.p1: handlers.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/handlers.p1.d 
-	@${RM} ${OBJECTDIR}/handlers.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/handlers.p1 handlers.c 
-	@-${MV} ${OBJECTDIR}/handlers.d ${OBJECTDIR}/handlers.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/handlers.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/serialization.p1: serialization.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/serialization.p1.d 
@@ -133,6 +125,14 @@ ${OBJECTDIR}/serialization.p1: serialization.c  nbproject/Makefile-${CND_CONF}.m
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/serialization.p1 serialization.c 
 	@-${MV} ${OBJECTDIR}/serialization.d ${OBJECTDIR}/serialization.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/serialization.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/request_handler.p1: request_handler.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/request_handler.p1.d 
+	@${RM} ${OBJECTDIR}/request_handler.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/request_handler.p1 request_handler.c 
+	@-${MV} ${OBJECTDIR}/request_handler.d ${OBJECTDIR}/request_handler.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/request_handler.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/lcd.p1: lcd.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -159,14 +159,6 @@ ${OBJECTDIR}/serial_port.p1: serial_port.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/serial_port.d ${OBJECTDIR}/serial_port.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/serial_port.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/handlers.p1: handlers.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/handlers.p1.d 
-	@${RM} ${OBJECTDIR}/handlers.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/handlers.p1 handlers.c 
-	@-${MV} ${OBJECTDIR}/handlers.d ${OBJECTDIR}/handlers.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/handlers.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/serialization.p1: serialization.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/serialization.p1.d 
@@ -174,6 +166,14 @@ ${OBJECTDIR}/serialization.p1: serialization.c  nbproject/Makefile-${CND_CONF}.m
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/serialization.p1 serialization.c 
 	@-${MV} ${OBJECTDIR}/serialization.d ${OBJECTDIR}/serialization.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/serialization.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/request_handler.p1: request_handler.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/request_handler.p1.d 
+	@${RM} ${OBJECTDIR}/request_handler.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/request_handler.p1 request_handler.c 
+	@-${MV} ${OBJECTDIR}/request_handler.d ${OBJECTDIR}/request_handler.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/request_handler.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

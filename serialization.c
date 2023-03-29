@@ -25,14 +25,6 @@ void serializeResponse(Buffer* buffer, const Response* response) {
     buffer->data[response->dataSize + 3] = crc >> 8;
 }
 
-void updateResponse(const Request* request, Response* response) {
-    response->address = request->address;
-    response->function = request->function;
-    response->dataSize = request->dataSize;
-    for (uchar i = 0; i < request->dataSize; i++)
-        response->data[i] = request->data[i];
-}
-
 uint16_t getCrc(uchar c_max, uchar *c_buffer) {
     uint16_t i_CRC = 0xffff;
     for (uchar c_i = 0; c_i < c_max; c_i++) {

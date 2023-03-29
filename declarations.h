@@ -27,8 +27,11 @@
 #define uchar unsigned char
 #define uint unsigned int
 #define joinHL(H, L) (uint16_t) ((H << 8) + L)
-#define RELAY1 0x08
-#define RELAY2 0x09
+#define RELAY1_ADDRESS 0x08
+#define RELAY2_ADDRESS 0x09
+#define ILLEGAL_FUNCTION_CODE 0x01
+#define ILLEGAL_DATA_ADDRESS_CODE 0x02
+#define ILLEGAL_DATA_VALUE_CODE 0x03
 
 typedef struct {
     uchar size;
