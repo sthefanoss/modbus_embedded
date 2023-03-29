@@ -55,3 +55,11 @@ void lcd_str(const char* str) {
         i++;
     }
 }
+
+void printBufferInLcd(const Buffer* buffer) {
+    lcd_str("\f");
+    for (uchar i = 0; i < buffer->size; i++) {
+        sprintf(lcdBuffer, "%02X", buffer->data[i]);
+        lcd_str(lcdBuffer);
+    }
+}

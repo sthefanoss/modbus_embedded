@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   globais.h
  * Author: julio
  *
@@ -18,10 +18,33 @@
 #pragma config WRT = OFF        // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
 #pragma config CP = OFF         // Flash Program Memory Code Protection bit (Code protection off)
 
+#include <stdint.h>
+#define BUFFER_SIZE 20
+#define DEVICE_ADDRESS 0x01
 #define BAUD 9600L
 #define _XTAL_FREQ 8000000L
 #define SPBRG_INIT (_XTAL_FREQ/(16UL*BAUD) - 1)//configuração da taxa serial, p/ baixa frequência
 #define uchar unsigned char
 #define uint unsigned int
+#define joinHL(H, L) (uint16_t) ((H << 8) + L) 
 
+typedef struct {
+    uchar size;
+    uchar data[BUFFER_SIZE];
+} Buffer;
+
+typedef struct {
+    uchar address;
+    uchar function;
+    uchar data[BUFFER_SIZE - 4];
+    uchar dataSize;
+    uchar crcValid;
+} Request;
+
+typedef struct {
+    uchar address;
+    uchar function;
+    uchar data[BUFFER_SIZE - 4];
+    uchar dataSize;
+} Response;
 #endif

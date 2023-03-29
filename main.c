@@ -5,8 +5,13 @@
 #include <pic16f877a.h>
 #include <stdint.h>
 #include "declarations.h"
+#include "handlers.h"
 #include "lcd.h"
 #include "serial_port.h"
+#include "serialization.h"
+
+Request request;
+Response response;
 
 void main(void) {
     GIE = 0;
@@ -14,9 +19,6 @@ void main(void) {
     TRISB = 0;
     TRISD = 0;
     TRISE = 0;
-
-    //    TMR1H=55536/256;
-    //    TMR1H=55536%256;
     TMR1 = 55536;
     TMR1IE = 1;
     TMR1ON = 1;
@@ -46,79 +48,61 @@ void main(void) {
 
     RC1 = 0;
     RC2 = 0;
+
+    buffer.size = 0;
     lcd_init();
     __delay_ms(500);
-    lcd_str(" teste");
+    lcd_str(" teste 1");
     while (1) {
-        //        if (gi_pisca == 100) {
-        //            lcd_str("\f");
-        //            sprintf(c_texto, "%u", gi_adconv);
-        //            lcd_str(c_texto);
-        //            RB1 ^= 1;
-        //        }
-        if (gc_c >= 8) {
-            //sub_tx(8, gc_rx);
-            //sprintf(c_texto," \f");
-            lcd_str("\f");
-            for (c_i = 0; c_i < 8; c_i++) {
-                sprintf(c_texto, "%02X", gc_rx[c_i]);
-                lcd_str(c_texto);
-            }
-            gc_c = 0;
-            if (gc_rx[0] == 1) {
-                switch (gc_rx[1]) {
-                    case 5:
-                        i_crc = gc_rx[7];
-                        i_crc <<= 8;
-                        i_crc += gc_rx[6];
-                        i_crc2 = f_crc(6, gc_rx);
+        if (!isRequestReady()) continue;
 
+        desserializeRequest(&buffer, &request);
+        printBufferInLcd(&buffer);
 
-                        if (i_crc == i_crc2) {
-
-                            if (gc_rx[2] == 0 && gc_rx[3] == 9) {
-
-                                if (gc_rx[4] == 0xff && gc_rx[5] == 0) {
-                                    RC2 = 1;
-
-                                }
-                                if (gc_rx[4] == 0 && gc_rx[5] == 0) {
-                                    RC2 = 0;
-                                }
-                                __delay_ms(50);
-                                sub_tx( 8,gc_rx);
-                            } else if (gc_rx[2] == 0 && gc_rx[3] == 10) {
-
-                                if (gc_rx[4] == 0xff && gc_rx[5] == 0) {
-                                    RC0 = 1;
-
-                                }
-                                if (gc_rx[4] == 0 && gc_rx[5] == 0) {
-                                    RC0 = 0;
-                                }
-                                __delay_ms(50);
-                                sub_tx( 8,gc_rx);
-                            } else {//configura mensagem de erro
-
-                                gc_rx[1] |= 0x80;
-                                gc_rx[2] = 2;
-                                i_crc2 = f_crc(3, gc_rx);
-                                gc_rx[3] = i_crc2;
-                                gc_rx[4] = i_crc2 >> 8;
-                                __delay_ms(50);
-                                sub_tx( 5,gc_rx);
-
-                            }
-
-                        }
-
-                        break;
-                }
-            }
-
+        if (!request.crcValid) {
+            buffer.size = 0;
+            continue;
         }
-        //        __delay_ms(100);
-        //        RB1 ^= 1;
+
+        if (request.address != DEVICE_ADDRESS) {
+            buffer.size = 0;
+            continue;
+        }
+
+        updateResponse(&request, &response);
+
+        switch (request.function) {
+            case 1:
+                handleRequest1(&request, &response);
+                break;
+
+            case 3:
+                handleRequest3(&request, &response);
+                break;
+
+            case 5:
+                handleRequest5(&request, &response);
+                break;
+
+            case 6:
+                handleRequest6(&request, &response);
+                break;
+
+            case 15:
+                handleRequest15(&request, &response);
+                break;
+
+            case 16:
+                handleRequest16(&request, &response);
+                break;
+
+            default:
+                handleInvalidRequest(&request, &response);
+                break;
+        }
+
+        //        serializeResponse(&buffer, &response);
+        __delay_ms(50);
+        submit();
     }
-    return;
 }
