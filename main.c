@@ -28,10 +28,10 @@ void main(void) {
     SYNC = 0; //modo assincrono
     SPEN = 1; //hab serial
     RX9 = 0; //modo 8bits
-    CREN = 1; //hab. recepção
+    CREN = 1; //hab. recepcao
     TXEN = 1; //hab. transmissao
-    PEIE = 1; //hab. int. de perféricos
-    RCIE = 1; //int. da recepção
+    PEIE = 1; //hab. int. de perfericos
+    RCIE = 1; //int. da recepcao
     TXIE = 0; //int. da transmissao
 
     CCP1CONbits.CCP1M = 0;
@@ -52,25 +52,39 @@ void main(void) {
     buffer.size = 0;
     lcd_init();
     __delay_ms(500);
-    lcd_str(" teste 1");
+    lcd_str("modbus");
     while (1) {
+        // Verifica tamanho do buffer.
+        // Espera ate satisfazer condicao.
         if (!isRequestReady()) continue;
 
-        desserializeRequest(&buffer, &request);
+        // Limpa lcd e printa entrada na primeira linha.
+        // Nao mostra CRC
+        lcd_str("\f");
         printBufferInLcd(&buffer);
 
+        // Passa os dados do buffer para a estrutura de requisicao.
+        desserializeRequest(&buffer, &request);
+
+
+        // Valida crc.
+        // Limpa buffer e ignora se estiver errado.
         if (!request.crcValid) {
             buffer.size = 0;
             continue;
         }
 
+        // Verifica se o comando eh para este dispositivo.
+        // Limpa buffer e ignora se nao for. Broadcast nao tratado.
         if (request.address != DEVICE_ADDRESS) {
             buffer.size = 0;
             continue;
         }
 
+        // Copia os dados da requisicao para a resposta por praticidade.
         updateResponse(&request, &response);
 
+        // Trata cada uma das requisicoes pedidas no trabalho separadamente
         switch (request.function) {
             case 1:
                 handleRequest1(&request, &response);
@@ -97,11 +111,19 @@ void main(void) {
                 break;
 
             default:
-                handleInvalidRequest(&request, &response);
+                handleInvalidFunctionCode(&request, &response);
                 break;
         }
 
-        //        serializeResponse(&buffer, &response);
+        // Passa a estrutura da resposta para o buffer.
+        serializeResponse(&buffer, &response);
+
+        // Printa saida na segunda linha
+        // Nao mostra CRC
+        lcd_cmd(L_L2);
+        printBufferInLcd(&buffer);
+
+        // Responde a requisicao.
         __delay_ms(50);
         submit();
     }

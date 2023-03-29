@@ -20,8 +20,9 @@ void serializeResponse(Buffer* buffer, const Response* response) {
     buffer->data[1] = response->function;
     for (uchar i = 0; i < response->dataSize; i++)
         buffer->data[i + 2] = response->data[i];
-    uchar crc = getCrc(response->dataSize + 2, buffer->size);
-    //    buffer->data[response->dataSize + 2]
+    uint16_t crc = getCrc(response->dataSize + 2, response->data - 2);
+    buffer->data[response->dataSize + 2] = crc;
+    buffer->data[response->dataSize + 3] = crc >> 8;
 }
 
 void updateResponse(const Request* request, Response* response) {
@@ -38,7 +39,7 @@ uint16_t getCrc(uchar c_max, uchar *c_buffer) {
         i_CRC = i_CRC^c_buffer[c_i];
         for (uchar c_j = 0; c_j < 8; c_j++) {
             if (!(i_CRC & 1))
-                i_CRC = i_CRC >> 1; //antes eram 2 rotações. Tenho q verificar isto
+                i_CRC = i_CRC >> 1; //antes eram 2 rotacoes. Tenho q verificar isto
             else {
                 i_CRC = i_CRC >> 1;
                 i_CRC = i_CRC^0xa001;

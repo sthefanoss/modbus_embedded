@@ -26,7 +26,9 @@
 #define SPBRG_INIT (_XTAL_FREQ/(16UL*BAUD) - 1)//configuração da taxa serial, p/ baixa frequência
 #define uchar unsigned char
 #define uint unsigned int
-#define joinHL(H, L) (uint16_t) ((H << 8) + L) 
+#define joinHL(H, L) (uint16_t) ((H << 8) + L)
+#define RELAY1 0x08
+#define RELAY2 0x09
 
 typedef struct {
     uchar size;
