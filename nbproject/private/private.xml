@@ -3,10 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/MPLABXProjects/modbus_embedded/serial_port.c</file>
-            <file>file:/D:/MPLABXProjects/modbus_embedded/declarations.h</file>
-            <file>file:/D:/MPLABXProjects/modbus_embedded/main.c</file>
+            <file>file:/C:/Program%20Files/Microchip/xc8/v2.32/pic/sources/c90/common/isdigit.c</file>
+            <file>file:/C:/Program%20Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f877a.h</file>
+            <file>file:/D:/MPLABXProjects/modbus_embedded/lcd.h</file>
+            <file>file:/D:/MPLABXProjects/modbus_embedded/temperature_controller.h</file>
+            <file>file:/D:/MPLABXProjects/modbus_embedded/serial_port.h</file>
             <file>file:/D:/MPLABXProjects/modbus_embedded/request_handler.c</file>
+            <file>file:/D:/MPLABXProjects/modbus_embedded/serial_port.c</file>
+            <file>file:/D:/MPLABXProjects/modbus_embedded/lcd.c</file>
+            <file>file:/D:/MPLABXProjects/modbus_embedded/serialization.c</file>
+            <file>file:/D:/MPLABXProjects/modbus_embedded/request_handler.h</file>
+            <file>file:/D:/MPLABXProjects/modbus_embedded/serialization.h</file>
+            <file>file:/D:/MPLABXProjects/modbus_embedded/declarations.h</file>
+            <file>file:/D:/MPLABXProjects/modbus_embedded/temperature_controller.c</file>
+            <file>file:/D:/MPLABXProjects/modbus_embedded/main.c</file>
         </group>
     </open-files>
 </project-private>

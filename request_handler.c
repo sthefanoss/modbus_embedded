@@ -99,7 +99,7 @@ void f03ReadHoldingRegisters(Request* request, Response* response) {
     }
 
     if (initialAddress + (count << 4) > ENGINE_START_DURATION_ADDRESS + 16) {
-        return updateResponseWithError(request, response, 0x10);
+        return updateResponseWithError(request, response, ILLEGAL_DATA_ADDRESS_CODE);
     }
 
 
@@ -185,8 +185,34 @@ void f15WriteMultipleCoils(Request* request, Response* response) {
 }
 
 void f16WriteMultipleRegisters(Request* request, Response* response) {
+    if (request->dataSize < 5) {
+        return updateResponseWithError(request, response, ILLEGAL_DATA_VALUE_CODE);
+    }
+
+    uint16_t initialAddress = joinHL(request->data[0], request->data[1]);
+    uint16_t registersCount = joinHL(request->data[2], request->data[3]);
+    uchar byteCountFromRequest = request->data[4];
+    uchar byteCount = registersCount << 1;
+    if (byteCount != byteCountFromRequest) {
+        return updateResponseWithError(request, response, ILLEGAL_DATA_VALUE_CODE);
+    }
+
+    if (initialAddress != TEMPERATURE_THRESHOLD_ADDRESS &&
+            initialAddress != ENGINE_START_DURATION_ADDRESS) {
+        return updateResponseWithError(request, response, ILLEGAL_DATA_ADDRESS_CODE);
+    }
+
+    if (initialAddress + (registersCount << 4) > ENGINE_START_DURATION_ADDRESS + 16) {
+        return updateResponseWithError(request, response, ILLEGAL_DATA_ADDRESS_CODE);
+    }
 
     updateResponse(request, response);
+    response->dataSize = 4;
+    uchar initialOffset = (uint16_t) ((int) initialAddress - (int) TEMPERATURE_ADDRESS) >> 4;
+    for (uint i = 0; i < registersCount; i++) {
+        uint16_t newState = ((request->data[(i << 1) + 5]) << 8) + request->data[(i << 1) + 6];
+        setHoldingRegiter(i + initialOffset, newState);
+    }
 }
 
 void updateResponse(Request* request, Response* response) {
