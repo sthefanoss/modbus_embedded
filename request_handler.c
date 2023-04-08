@@ -111,10 +111,37 @@ void f06WriteSingleRegister(Request* request, Response* response) {
 }
 
 void f15WriteMultipleCoils(Request* request, Response* response) {
+    if (request->dataSize < 5) {
+        return updateResponseWithError(request, response, ILLEGAL_DATA_VALUE_CODE);
+    }
+
+    uint16_t initialAddress = joinHL(request->data[0], request->data[1]);
+    uint16_t coilCount = joinHL(request->data[2], request->data[3]);
+    uchar byteCountFromRequest = request->data[4];
+
+    if (initialAddress < COILS_ADDRESS ||
+            (initialAddress >= COILS_ADDRESS + COILS_COUNT) ||
+            (initialAddress + coilCount > COILS_ADDRESS + COILS_COUNT)) {
+        return updateResponseWithError(request, response, ILLEGAL_DATA_ADDRESS_CODE);
+    }
+
+    uchar byteCount = (coilCount / 8) + (coilCount % 8 != 0);
+    if (byteCount != byteCountFromRequest) {
+        return updateResponseWithError(request, response, ILLEGAL_DATA_VALUE_CODE);
+    }
+    uint16_t initialOffset = (uint16_t) ((int) initialAddress - (int) COILS_ADDRESS);
+    for (uint16_t i = 0; i < coilCount; i++) {
+        uint index = 5 + (i >> 3);
+        uint mask = 1 << (7 - (i % 8));
+        uint newState = (request->data[index] & mask) != 0;
+        setCoilValue(initialOffset + i, newState);
+    }
     updateResponse(request, response);
+    response->dataSize = 4;
 }
 
 void f16WriteMultipleRegisters(Request* request, Response* response) {
+
     updateResponse(request, response);
 }
 
@@ -122,11 +149,13 @@ void updateResponse(Request* request, Response* response) {
     response->address = request->address;
     response->function = request->function;
     response->dataSize = request->dataSize;
+
     for (uchar i = 0; i < request->dataSize; i++)
         response->data[i] = request->data[i];
 }
 
 void updateResponseWithError(Request* request, Response* response, uchar code) {
+
     response->address = request->address;
     response->function = request->function | 0x80;
     response->data[0] = code;
@@ -164,6 +193,7 @@ void setCoilValue(uchar coilOffset, uchar newState) {
             break;
         case 9:
             RELAY2_ADDRESS = newState; //precisa usar toggle na placa
+
             break;
     }
 }
