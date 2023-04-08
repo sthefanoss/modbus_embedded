@@ -138,6 +138,19 @@ void f05WriteSingleCoil(Request* request, Response* response) {
 }
 
 void f06WriteSingleRegister(Request* request, Response* response) {
+    if (request->dataSize != 4) {
+        return updateResponseWithError(request, response, ILLEGAL_DATA_VALUE_CODE);
+    }
+
+    uint16_t address = joinHL(request->data[0], request->data[1]);
+    uint16_t value = joinHL(request->data[2], request->data[3]);
+
+    if (address != TEMPERATURE_THRESHOLD_ADDRESS &&
+            address != ENGINE_START_DURATION_ADDRESS) {
+        return updateResponseWithError(request, response, ILLEGAL_DATA_ADDRESS_CODE);
+    }
+
+    setHoldingRegiter(address == TEMPERATURE_THRESHOLD_ADDRESS ? 1 : 2, value);
     updateResponse(request, response);
 }
 
