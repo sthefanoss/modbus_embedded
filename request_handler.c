@@ -20,6 +20,10 @@ void setCoilValue(uchar, uchar);
 
 uchar getCoilValue(uchar);
 
+void setHoldingRegiter(uchar, uint16_t);
+
+uint16_t getHoldinRegiter(uchar);
+
 void handleRequest(Request* request, Response* response) {
     switch (request->function) {
         case 1:
@@ -81,7 +85,34 @@ void f01ReadCoils(Request* request, Response* response) {
 }
 
 void f03ReadHoldingRegisters(Request* request, Response* response) {
+    if (request->dataSize != 4) {
+        return updateResponseWithError(request, response, ILLEGAL_DATA_VALUE_CODE);
+    }
+
+    uint16_t initialAddress = joinHL(request->data[0], request->data[1]);
+    uint16_t count = joinHL(request->data[2], request->data[3]);
+
+    if (initialAddress != TEMPERATURE_ADDRESS &&
+            initialAddress != TEMPERATURE_THRESHOLD_ADDRESS &&
+            initialAddress != ENGINE_START_DURATION_ADDRESS) {
+        return updateResponseWithError(request, response, ILLEGAL_DATA_ADDRESS_CODE);
+    }
+
+    if (initialAddress + (count << 4) > ENGINE_START_DURATION_ADDRESS + 16) {
+        return updateResponseWithError(request, response, 0x10);
+    }
+
+
     updateResponse(request, response);
+    uchar byteCount = count << 1;
+    response->dataSize = 1 + byteCount;
+    response->data[0] = byteCount;
+    uchar initialOffset = (uint16_t) ((int) initialAddress - (int) TEMPERATURE_ADDRESS) >> 4;
+    for (uint i = 0; i < count; i++) {
+        uint16_t value = getHoldinRegiter(i + initialOffset);
+        response->data[(i << 1) + 1] = value >> 8; // H
+        response->data[(i << 1) + 2] = value & 0xFFFF; // L
+    }
 }
 
 void f05WriteSingleCoil(Request* request, Response* response) {
@@ -220,5 +251,24 @@ uchar getCoilValue(uchar coilOffset) {
             return RELAY1_ADDRESS;
         case 9:
             return RELAY2_ADDRESS;
+    }
+}
+
+void setHoldingRegiter(uchar offset, uint16_t newState) {
+    switch (offset) {
+        case 1:
+            temperatureThreshold = newState;
+            break;
+        case 2:
+            engineStartDuration = newState;
+            break;
+    }
+}
+
+uint16_t getHoldinRegiter(uchar offset) {
+    switch (offset) {
+        case 0: return currentTemperature;
+        case 1: return temperatureThreshold;
+        case 2: return engineStartDuration;
     }
 }

@@ -1,5 +1,9 @@
 #include "serial_port.h"
 
+uint8_t interruptCounter = 100;
+uint8_t eventsSize = 0;
+void (*events[8])(void);
+
 /*----------------------------------------
 sub_tx
 Descrição: envia o gc_buffer para a saída serial
@@ -20,14 +24,16 @@ void submit() {
     while (!TXSTAbits.TRMT);
 }
 
-int le_ad(void) {
-    ADCON0bits.GO_DONE = 1;
-    while (ADCON0bits.GO_DONE);
-    return joinHL(ADRESH, ADRESL);
-}
-
 uint isRequestReady(void) {
     return buffer.size >= 8;
+}
+
+void addPeriodicEvent(void *event(void)) {
+    if (eventsSize >= sizeof (events)) {
+        return;
+    }
+    events[eventsSize] = event;
+    eventsSize++;
 }
 
 void __interrupt() isr(void) {
@@ -37,10 +43,13 @@ void __interrupt() isr(void) {
         TMR1IF = 0;
         TMR1 = 55536;
 
-        if (gi_pisca) {
-            gi_pisca--;
+        if (interruptCounter) {
+            interruptCounter--;
+
         } else {
-            gi_pisca = 100; //a cada 1s
+            interruptCounter = 100; //a cada 1s
+            for (uint i = 0; i < eventsSize; i++)
+                events[i]();
         }
     }
     if (RCIF && RCIE) {

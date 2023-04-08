@@ -9,6 +9,7 @@
 #include "lcd.h"
 #include "serial_port.h"
 #include "serialization.h"
+#include "temperature_controller.h"
 
 Request request;
 Response response;
@@ -38,8 +39,12 @@ void main(void) {
     GIE = 1;
 
     //configura conversor A/D
-    TRISA = 3; //SELECIONA 1 CANAL
-    ADCON1 = 0X84; //seleciona o canal 0
+    //SELECIONA 1 CANAL
+    // TRISA = 3; //SELECIONA 1 CANAL
+    // ADCON1 = 0X84; //seleciona o canal 0
+    TRISA = 0x7;
+    ADCON1 = 0x02;
+    ADCON0 = 0x41;
 
     ADCON0bits.CHS = 1;
     ADCON0bits.ADCS = 5;
@@ -53,6 +58,9 @@ void main(void) {
     lcd_init();
     __delay_ms(500);
     lcd_str("modbus");
+
+    addPeriodicEvent(updateTemperature);
+    addPeriodicEvent(controlTemperature);
     while (1) {
         // Verifica tamanho do buffer.
         // Espera ate satisfazer condicao.

@@ -7,12 +7,10 @@
 #include <pic.h>
 
 Buffer buffer;
-uint16_t gi_adconv = 0;
-uint8_t gi_pisca = 100;
 
 void submit();
-int le_ad(void);
 uint isRequestReady();
+void addPeriodicEvent(void *event(void));
 void __interrupt() isr(void);
 
 #endif

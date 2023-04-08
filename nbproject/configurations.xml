@@ -9,6 +9,7 @@
       <itemPath>declarations.h</itemPath>
       <itemPath>serialization.h</itemPath>
       <itemPath>request_handler.h</itemPath>
+      <itemPath>temperature_controller.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -22,6 +23,7 @@
       <itemPath>serial_port.c</itemPath>
       <itemPath>serialization.c</itemPath>
       <itemPath>request_handler.c</itemPath>
+      <itemPath>temperature_controller.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

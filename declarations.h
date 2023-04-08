@@ -34,11 +34,16 @@
 #define ILLEGAL_FUNCTION_CODE 0x01
 #define ILLEGAL_DATA_ADDRESS_CODE 0x02
 #define ILLEGAL_DATA_VALUE_CODE 0x03
-#define COILS_ADDRESS 0x0064 //100
+#define COILS_ADDRESS 0x64 //100
 #define COILS_COUNT 10
-#define ENGINE_START_DURATION_ADDRESS 0x78 //120
-#define TEMPERATURE_THRESHOLD_ADDRESS 0x8c //140
+#define TEMPERATURE_ADDRESS 0x78 // 120
+#define TEMPERATURE_THRESHOLD_ADDRESS 0x88 //136
+#define ENGINE_START_DURATION_ADDRESS 0x98 //152
 
+uint16_t currentTemperature = 0;
+uint16_t temperatureThreshold = 27; // 27 C 0x001B
+uint16_t engineStartDuration = 700; // 7s 0x02BC
+        
 typedef struct {
     uchar size;
     uchar data[BUFFER_SIZE];
