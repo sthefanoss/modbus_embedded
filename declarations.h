@@ -17,7 +17,7 @@
 #pragma config CPD = OFF        // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)
 #pragma config WRT = OFF        // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
 #pragma config CP = OFF         // Flash Program Memory Code Protection bit (Code protection off)
-
+#include <pic16f877a.h>
 #include <stdint.h>
 #define BUFFER_SIZE 20
 #define DEVICE_ADDRESS 0x01
@@ -43,7 +43,7 @@
 uint16_t currentTemperature = 0;
 uint16_t temperatureThreshold = 27; // 27 C 0x001B
 uint16_t engineStartDuration = 700; // 7s 0x02BC
-        
+
 typedef struct {
     uchar size;
     uchar data[BUFFER_SIZE];

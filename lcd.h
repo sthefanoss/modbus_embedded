@@ -3,7 +3,6 @@
 
 #include "declarations.h"
 #include <stdio.h>
-#include <pic16f877a.h>
 #include <pic.h>
 
 #define LENA  RE1

@@ -10,6 +10,7 @@
 #include "serial_port.h"
 #include "serialization.h"
 #include "temperature_controller.h"
+#include "engine_controller.h"
 
 Request request;
 Response response;
@@ -61,6 +62,7 @@ void main(void) {
 
     addPeriodicEvent(updateTemperature);
     addPeriodicEvent(controlTemperature);
+    addPeriodicEvent(controlEngineRelays);
     while (1) {
         // Verifica tamanho do buffer.
         // Espera ate satisfazer condicao.

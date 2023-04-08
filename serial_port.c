@@ -1,8 +1,9 @@
 #include "serial_port.h"
+#define INTERRUPT_COUNT 100
 
-uint8_t interruptCounter = 100;
+uint16_t interruptCounter = INTERRUPT_COUNT;
 uint8_t eventsSize = 0;
-void (*events[8])(void);
+void (*events[8])(uint16_t);
 
 /*----------------------------------------
 sub_tx
@@ -28,7 +29,7 @@ uint isRequestReady(void) {
     return buffer.size >= 8;
 }
 
-void addPeriodicEvent(void *event(void)) {
+void addPeriodicEvent(void *event(uint16_t)) {
     if (eventsSize >= sizeof (events)) {
         return;
     }
@@ -47,9 +48,9 @@ void __interrupt() isr(void) {
             interruptCounter--;
 
         } else {
-            interruptCounter = 100; //a cada 1s
+            interruptCounter = INTERRUPT_COUNT; //a cada 1s
             for (uint i = 0; i < eventsSize; i++)
-                events[i]();
+                events[i](INTERRUPT_COUNT);
         }
     }
     if (RCIF && RCIE) {

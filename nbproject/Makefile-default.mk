@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=lcd.c main.c serial_port.c serialization.c request_handler.c temperature_controller.c
+SOURCEFILES_QUOTED_IF_SPACED=lcd.c main.c serial_port.c serialization.c request_handler.c temperature_controller.c engine_controller.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/serial_port.p1 ${OBJECTDIR}/serialization.p1 ${OBJECTDIR}/request_handler.p1 ${OBJECTDIR}/temperature_controller.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/serial_port.p1.d ${OBJECTDIR}/serialization.p1.d ${OBJECTDIR}/request_handler.p1.d ${OBJECTDIR}/temperature_controller.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/serial_port.p1 ${OBJECTDIR}/serialization.p1 ${OBJECTDIR}/request_handler.p1 ${OBJECTDIR}/temperature_controller.p1 ${OBJECTDIR}/engine_controller.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/serial_port.p1.d ${OBJECTDIR}/serialization.p1.d ${OBJECTDIR}/request_handler.p1.d ${OBJECTDIR}/temperature_controller.p1.d ${OBJECTDIR}/engine_controller.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/serial_port.p1 ${OBJECTDIR}/serialization.p1 ${OBJECTDIR}/request_handler.p1 ${OBJECTDIR}/temperature_controller.p1
+OBJECTFILES=${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/serial_port.p1 ${OBJECTDIR}/serialization.p1 ${OBJECTDIR}/request_handler.p1 ${OBJECTDIR}/temperature_controller.p1 ${OBJECTDIR}/engine_controller.p1
 
 # Source Files
-SOURCEFILES=lcd.c main.c serial_port.c serialization.c request_handler.c temperature_controller.c
+SOURCEFILES=lcd.c main.c serial_port.c serialization.c request_handler.c temperature_controller.c engine_controller.c
 
 
 
@@ -142,6 +142,14 @@ ${OBJECTDIR}/temperature_controller.p1: temperature_controller.c  nbproject/Make
 	@-${MV} ${OBJECTDIR}/temperature_controller.d ${OBJECTDIR}/temperature_controller.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/temperature_controller.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/engine_controller.p1: engine_controller.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/engine_controller.p1.d 
+	@${RM} ${OBJECTDIR}/engine_controller.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/engine_controller.p1 engine_controller.c 
+	@-${MV} ${OBJECTDIR}/engine_controller.d ${OBJECTDIR}/engine_controller.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/engine_controller.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/lcd.p1: lcd.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -190,6 +198,14 @@ ${OBJECTDIR}/temperature_controller.p1: temperature_controller.c  nbproject/Make
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/temperature_controller.p1 temperature_controller.c 
 	@-${MV} ${OBJECTDIR}/temperature_controller.d ${OBJECTDIR}/temperature_controller.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/temperature_controller.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/engine_controller.p1: engine_controller.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/engine_controller.p1.d 
+	@${RM} ${OBJECTDIR}/engine_controller.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/engine_controller.p1 engine_controller.c 
+	@-${MV} ${OBJECTDIR}/engine_controller.d ${OBJECTDIR}/engine_controller.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/engine_controller.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
