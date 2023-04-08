@@ -52,3 +52,5 @@ You cannot set both registers at same time. This board will turn of Star relay i
 
 If Star relay is already on and you turn on Delta relay, it will disable the first for security as well.
 
+You must turn off Delta bofore turn on Star again. 
+
