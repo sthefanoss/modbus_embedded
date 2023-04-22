@@ -58,7 +58,7 @@ void main(void) {
     buffer.size = 0;
     lcd_init();
     __delay_ms(500);
-    lcd_str("modbus");
+    lcd_str("modbus sthefano");
 
     addPeriodicEvent(updateTemperature);
     addPeriodicEvent(controlTemperature);
@@ -81,6 +81,8 @@ void main(void) {
         // Limpa buffer e ignora se estiver errado.
         if (!request.crcValid) {
             buffer.size = 0;
+            lcd_cmd(L_L2);
+            lcd_str("invalid crc");
             continue;
         }
 
@@ -88,6 +90,8 @@ void main(void) {
         // Limpa buffer e ignora se nao for. Broadcast nao tratado.
         if (request.address != DEVICE_ADDRESS) {
             buffer.size = 0;
+            lcd_cmd(L_L2);
+            lcd_str("other device");
             continue;
         }
 

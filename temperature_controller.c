@@ -1,6 +1,9 @@
 #include "temperature_controller.h"
 #include "declarations.h"
 
+//1023 - 5V ?? fazer conversao
+//0 - 1V - 100C 
+
 void updateTemperature(uint16_t dt) {
     ADCON0 = 0x11;
     ADCON0bits.GO = 1;

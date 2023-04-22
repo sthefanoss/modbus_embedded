@@ -38,7 +38,6 @@ void addPeriodicEvent(void *event(uint16_t)) {
 }
 
 void __interrupt() isr(void) {
-
     if (TMR1IE && TMR1IF)//timer 1?
     {
         TMR1IF = 0;

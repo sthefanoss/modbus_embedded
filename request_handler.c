@@ -98,7 +98,7 @@ void f03ReadHoldingRegisters(Request* request, Response* response) {
         return updateResponseWithError(request, response, ILLEGAL_DATA_ADDRESS_CODE);
     }
 
-    if (initialAddress + (count << 4) > ENGINE_START_DURATION_ADDRESS + 16) {
+    if (initialAddress + count > ENGINE_START_DURATION_ADDRESS + 1) {
         return updateResponseWithError(request, response, ILLEGAL_DATA_ADDRESS_CODE);
     }
 
@@ -107,7 +107,7 @@ void f03ReadHoldingRegisters(Request* request, Response* response) {
     uchar byteCount = count << 1;
     response->dataSize = 1 + byteCount;
     response->data[0] = byteCount;
-    uchar initialOffset = (uint16_t) ((int) initialAddress - (int) TEMPERATURE_ADDRESS) >> 4;
+    uchar initialOffset = (uint16_t) ((int) initialAddress - (int) TEMPERATURE_ADDRESS);
     for (uint i = 0; i < count; i++) {
         uint16_t value = getHoldinRegiter(i + initialOffset);
         response->data[(i << 1) + 1] = value >> 8; // H
@@ -202,13 +202,13 @@ void f16WriteMultipleRegisters(Request* request, Response* response) {
         return updateResponseWithError(request, response, ILLEGAL_DATA_ADDRESS_CODE);
     }
 
-    if (initialAddress + (registersCount << 4) > ENGINE_START_DURATION_ADDRESS + 16) {
+    if (initialAddress + registersCount > ENGINE_START_DURATION_ADDRESS + 1) {
         return updateResponseWithError(request, response, ILLEGAL_DATA_ADDRESS_CODE);
     }
 
     updateResponse(request, response);
     response->dataSize = 4;
-    uchar initialOffset = (uint16_t) ((int) initialAddress - (int) TEMPERATURE_ADDRESS) >> 4;
+    uchar initialOffset = (uint16_t) ((int) initialAddress - (int) TEMPERATURE_ADDRESS);
     for (uint i = 0; i < registersCount; i++) {
         uint16_t newState = ((request->data[(i << 1) + 5]) << 8) + request->data[(i << 1) + 6];
         setHoldingRegiter(i + initialOffset, newState);
@@ -225,7 +225,6 @@ void updateResponse(Request* request, Response* response) {
 }
 
 void updateResponseWithError(Request* request, Response* response, uchar code) {
-
     response->address = request->address;
     response->function = request->function | 0x80;
     response->data[0] = code;
@@ -263,7 +262,6 @@ void setCoilValue(uchar coilOffset, uchar newState) {
             break;
         case 9:
             RELAY2_ADDRESS = newState; //precisa usar toggle na placa
-
             break;
     }
 }
